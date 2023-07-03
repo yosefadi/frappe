@@ -49,7 +49,7 @@ def get_db(host=None, user=None, domain=None, password=None, port=None):
 	else:
 		import frappe.database.mariadb.database
 
-		return frappe.database.mariadb.database.MariaDBDatabase(host, user+"@"+domain, password, port=port)
+		return frappe.database.mariadb.database.MariaDBDatabase(host, str(user)+"@"+str(domain), password, port=port)
 
 
 def setup_help_database(help_db_name):
